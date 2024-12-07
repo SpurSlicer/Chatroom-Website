@@ -1,28 +1,50 @@
 .welcome {
+    position: relative;
+    margin: auto;
+    padding: 20px;
+    margin-right: 0px;
+    margin-left: 0px;
+    right: calc(50% - 40vw + 40px);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 30vh;
+    height: fit-content;
     width: 40vw;
     background-color: navy;
 }
 
-#sign-in {
-    background-color: transparent;
-    color: navy;
+.welcome_button {
+    background-color: navy;
+    color: blue;
     border: none;
     font-size: 16px;
     cursor: pointer;
-    width: 140px;
-    height: 40px;
-    margin-bottom: 20px;
+    width: 100%;
+    height: fit-content;
+    padding: 10px;
+    /* margin-bottom: 20px; */
 }
 
-#google-logo {
-    width: 140px;
-    height: 40px;
+.welcome_button:hover {
+    background-color: lightblue;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    gap: 5px;
+}
+form .welcome_buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
 }
 
 h1 {

@@ -2,16 +2,12 @@ import { Categories } from "./Categories";
 import "./Servers.css"
 import {Component, useRef, useEffect, useState} from 'react'
 
-
 export class Server extends Component {
-    constructor(props) {
+    constructor(props, server_name) {
         super(props);
-        this.server_name = "New Server";
+        this.props = props;
+        this.server_name = server_name;
         this.categories = new Categories(props);
-    }
-    setServerName(server_name) { 
-        this.text = text;
-        this.categories.changeServerName(server_name);
     }
     render(props) {
         return (
@@ -20,11 +16,14 @@ export class Server extends Component {
             </div>
         )
     }
+    changeCurrentServer(e) {
+        this.props.children.setCurrentServer(e.target.innerText);
+    }
     renderServerSelectInfo() {
         return (
-            <div className='server_select_info'>
-                hiiii;
-            </div>
+            <button className='server_select_info' onClick={(e) => this.changeCurrentServer(e)}>
+                {this.server_name}
+            </button>
         )
     }
 }
@@ -32,51 +31,37 @@ export class Server extends Component {
 export class Servers extends Component {
     constructor(props) {
         super(props);
-        this.servers = [new Server(props)];
-        this.current_server = this.servers[0];
+        this.servers = new Map();
+        for (let i of props.children.login.servers) {
+            this.servers.set(i, new Server(props, i));
+        }
+        this.props = props;
     }
     addServer(server) {
-        this.servers.push(server);
+        // this.servers.push(server);
+    }
+    setFirstServerAsCurrent() {
+        this.props.children.setCurrentServer(this.servers.keys().next().value);
+    }
+    createServer(server_name) {
+        this.servers.set(server_name, new Server(props, server_name));
     }
     getServerSelectInfo() {
         const server_select_info = [];
-        for (const server of this.servers) server_select_info.push(server.renderServerSelectInfo());
+        for (const [server_name, server] of this.servers) server_select_info.push(server.renderServerSelectInfo());
         return server_select_info;
     }
     render(props) {
+        const server = this.servers.get(this.props.children.current_server);
+        if (server == undefined) {
+            return (<></>);
+        }
         return (
             <>
             <div className='servers'>
                 {this.getServerSelectInfo()}
             </div>
-            {this.current_server.render()}
-            </>
-        )
-    }
-}
-
-export class User extends Component {
-    constructor(props) {
-        super(props);
-        this.servers = [new Server(props)];
-        this.current_server = this.servers[0];
-        this.user_name = "testinggggg";
-    }
-    addServer(server) {
-        this.servers.push(server);
-    }
-    getServerSelectInfo() {
-        const server_select_info = [];
-        for (const server of this.servers) server_select_info.push(server.renderServerSelectInfo());
-        return server_select_info;
-    }
-    render(props) {
-        return (
-            <>
-            <div className='servers'>
-                {this.getServerSelectInfo()}
-            </div>
-            {this.current_server.render()}
+            {this.servers.get(this.props.children.current_server).render()}
             </>
         )
     }

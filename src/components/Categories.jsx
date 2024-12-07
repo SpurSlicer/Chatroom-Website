@@ -6,10 +6,11 @@ import {Messages} from './Messages'
 export class Channel extends Component {
     constructor(props) {
         super(props);
-        this.name = "New Channel";
+        this.name = "test"+Math.random();
         this.messages = new Messages(props);
         this.props = props;
     }
+    getName() { return this.name };
     changeName(name) { 
         this.name = name;
     }
@@ -31,7 +32,7 @@ export class Channel extends Component {
 export class Category extends Component {
     constructor(props) {
         super(props);
-        this.name = "New Category";
+        this.name = "test"+Math.random();
         this.channels = [new Channel(props), new Channel(props)];
     }
     setText(text) { 
@@ -43,6 +44,9 @@ export class Category extends Component {
             channel_display_infos.push(channel.renderDisplayInfo());
         }
         return channel_display_infos;
+    }
+    getFirstChannel() {
+        return this.channels[0].getName();
     }
     renderDisplayInfo() {
         return (
@@ -64,8 +68,11 @@ export class Categories extends Component {
         this.categories = [new Category(props)]
         this.props = props;
     }
-    changeServerName(server_name) { 
-        this.server_name = server_name;
+    getFirstChannel() {
+        return this.categories[0].getFirstChannel();
+    }
+    renderChannel() {
+        
     }
     getCategoryDisplayInfo() {
         const category_display_infos = [];
@@ -75,13 +82,16 @@ export class Categories extends Component {
         return category_display_infos;
     }
     render() {
-        //const current_channel = this.state.current_server;
+        if (this.props.children.current_channels.get(this.props.children.current_server) == "") {
+            const new_map = new Map(this.props.children.current_channels.set(this.props.children.current_server, this.getFirstChannel()));
+            this.props.children.setCurrentChannel(new_map);
+        }
         return (
             <>
             <div className='categories'>
                 {this.getCategoryDisplayInfo()}
             </div>
-                {(this.props.children.current_server == null) ? (<></>) : (this.props.children.current_server.render())}
+                {/* {this.props.children.current_server.render()} */}
             </>
         )
     }
