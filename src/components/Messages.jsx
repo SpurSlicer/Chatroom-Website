@@ -10,18 +10,31 @@ function ChatRoom({ login, messages, onSendMessage }) {
             setNewMessage("");
         }
     };
+
     if (messages == null) {
         return (
             <div className='message-error'>Messages Not Found</div>
         )
     }
+
+    const analyzeText = (text) => {
+        console.log("\t\tTEXT:", text);
+        if (text.toLowerCase().endsWith("images")) {
+            return <><br/><img src={text} alt={text}/></>
+        } else if (text.toLowerCase().includes("http")) {
+            return <a href={text}>{text}</a>;
+        } else {
+            return text;
+        }
+    }
+    
     return (
         <div className="chat-room">
             <h3>Chat Room</h3>
             <div className="messages-container">
                 {messages.map((message, index) => (
                     <div key={index} className="message">
-                        <strong className = "username">{message.username}:</strong> {message.text}
+                        <strong className = "username">{message.username}:</strong> {analyzeText(message.text)}
                     </div>
                 ))}
             </div>

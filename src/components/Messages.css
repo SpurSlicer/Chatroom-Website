@@ -23,6 +23,16 @@
     font-weight: bold;
     color: rgb(221, 164, 72);
 }
+a {
+    color: lightblue;
+}
+a:hover {
+    color:rgb(221, 241, 248)
+}
+img {
+    max-height: 512px;
+    max-width: 512px;
+}
 
 .send_message_button {
     padding: 8px 30px;
