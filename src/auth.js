@@ -66,7 +66,7 @@ export const Signup = async ({login, setLogin}) => {
     await addDoc(userCollection, {
         "username": login.username,
         "password": hashSync(login.password, salt),
-        "servers": []
+        "servers": ["test1", "test2"]
     });
     console.log(`[DEBUG] user ${login.username} signed up successfully`);
     Login({login, setLogin});
