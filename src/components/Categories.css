@@ -1,26 +1,42 @@
-.categories { 
-    grid-area: 1 / 1 / 2 / 2; 
-    height: 100%;
-    width: 100%;
+.categories-list { 
+    background-color: rgb(16, 69, 71);
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    border-left: 1px solid rgb(240, 239, 244);
+    border-right: 1px solid rgb(240, 239, 244); 
 }
-.categories .catgory {
-    height: fit-content;
-    width: inherit;
+
+.cat-name {
+    font-size: 1.2em; 
+    margin: 10px 10px; 
+    color: rgb(240, 239, 244); 
+    border-bottom: 1px solid rgb(240, 239, 244); 
+    padding-bottom: 2px;
 }
-.categories .category label {
-    color: inherit;
+
+.channel-item {
+    padding: 8px 15px; 
+    margin: 5px 10px; 
+    border: none; 
+    border-radius: 5px; 
+    background-color: rgb(240, 239, 244); 
+    cursor: pointer; 
+    transition: background-color 0.3s;
 }
-.categories .category button {
-    height: fit-content;
-    width: 100%;
-    border: none;
-    background-color: transparent;
-    color: inherit;
-    text-align: left;
+
+.channel-item:hover {
+    background-color: rgb(221, 164, 72);
 }
-.categories .category button:hover {
-    background-color: rgba(255, 255, 255, 0.5);
+
+h3 {
+    font-size: 1.4em; 
+    font-weight: 600; 
+    margin: 10px 0; 
+    color: rgb(221, 164, 72);
 }
-.current_messages { 
-    grid-area: 1 / 2 / 2 / 3; 
-} 
+
+h4 {
+    font-weight: 500;
+    color: ghostwhite;
+}

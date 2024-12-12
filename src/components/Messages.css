@@ -1,25 +1,61 @@
-.messages {
+.chat-room {
+    background-color: rgb(16, 69, 71);
+    width: 50%;
+    border-left: 1px solid rgb(240, 239, 244);
+    border-right: 1px solid rgb(240, 239, 244); 
+}
+
+.messages-container {
     width: 100%;
     height: calc(100% - 50px);
     display: flex;
-    flex-direction: column-reverse;
-    background-color: lightblue;
-    color: inherit;
-}
-.messages .message {
-    width: inherit;
-    height: fit-content;
-}
-.send_message {
-    display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-    width: inherit;
-    background-color: green;
+    color: rgb(240, 239, 244);
+    border: 3px solid rgb(121, 92, 95);
+    border-radius: 10px;
+    padding: 10px;
 }
-.send_message input {
+.messages-container .message {
+    width: inherit;
     height: fit-content;
+}
+.username {
+    font-weight: bold;
+    color: rgb(221, 164, 72);
+}
+
+.send_message_button {
+    padding: 8px 30px;
+    background-color: rgb(0, 169, 165); 
+    color: ghostwhite;
+    border: none; 
+    border-radius: 5px;
+    margin: 10px 10px;
+    cursor: pointer; 
+    transition: background-color 0.3s;
+}
+
+.send_message_button:hover {
+    background-color: rgb(4, 99, 97);
+}
+
+.message-input {
     width: 90%;
+    height: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin: 10px 10px;
+}
+
+.input-area {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+}
+
+.message-error {
+    color: red;
+    font-size: 1em;
+    margin: 22%;
 }

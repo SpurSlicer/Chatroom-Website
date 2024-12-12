@@ -1,24 +1,29 @@
-.servers {
-    grid-area: 1 / 1 / 2 / 2;
-    background-color: green;
+.servers-list {
+    background-color: rgb(16, 69, 71);
     display: flex;
     flex-direction: column;
-    flex: 0;
-    height: 100%;
-    width: 100%;
+    width: 20%;
+    border-left: 1px solid rgb(240, 239, 244);
+    border-right: 1px solid rgb(240, 239, 244); 
 }
-.servers .server_select_info {
-    height: fit-content;
-    width: inherit;
+
+.serveritem {
+    padding: 10px 20px; 
+    margin: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    background-color: rgb(240, 239, 244);; 
+    cursor: pointer; 
+    transition: background-color 0.3s;
 }
-.server {
-    grid-area: 1 / 2 / 2 / 3;
-    background-color: lightgreen;
-    width: inherit;
-    height: inherit;
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    grid-template-rows: 1fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;     
+
+.serveritem:hover {
+    background-color: rgb(221, 164, 72);
+}
+
+h3 {
+    font-size: 1.4em;
+    font-weight: 600; 
+    margin: 10px 10px; 
+    color: rgb(221, 164, 72);
 }

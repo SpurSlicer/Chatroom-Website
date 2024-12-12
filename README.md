@@ -24,10 +24,6 @@ App Page Version 1
 ChatRoom Version 1
 ![Chat 1](public/Progress-Images/ChatV1.jpg)
 
-## Forked Respository for Refactoring
-https://github.com/shwi6838/Web-Dev-Project-2
-
-
 # Project 2 Reflection
 
 # React + Vite
