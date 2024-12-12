@@ -6,7 +6,7 @@
 }
 
 .messages-container {
-    width: 100%;
+    width: calc(100% - 26px);
     height: calc(100% - 50px);
     display: flex;
     flex-direction: column;
@@ -14,10 +14,12 @@
     border: 3px solid rgb(121, 92, 95);
     border-radius: 10px;
     padding: 10px;
+    overflow-y: scroll;
 }
 .messages-container .message {
     width: inherit;
     height: fit-content;
+    overflow-wrap: break-word;
 }
 .username {
     font-weight: bold;

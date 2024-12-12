@@ -1,7 +1,7 @@
 /* App.css */
 .app {
-  height: 99vh;
-  width: 99vw;
+  height: calc(99vh - 2px);
+  width: calc(99vw + 8px);
   display: flex;
   flex-direction: row;
 }
