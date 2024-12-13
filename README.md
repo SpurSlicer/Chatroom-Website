@@ -1,5 +1,5 @@
 # Project 2 Proposal
-
+We will be creating a clone of discord as it a prototypical example of a SPA. We both have a moderate interest in the technology behind chatroom applications and are curious about trying to recreate it from scratch. The intended audience will be anyone looking for like-minded communication clusters on the internet--i.e., the audience for forums. All of this will be styled differently from discord. Our inspiration from them was their chatroom structure.
 # Project 2 WIP Check In
 
 We started with a plan for the components, seeing what we needs to use and create. We wanted to use Firebase's Database, but we needed a good hierarchy to start with. We used our knowledge of Discord, and created one. 
