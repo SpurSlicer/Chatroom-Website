@@ -19,7 +19,7 @@ function ChatRoom({ login, messages, onSendMessage }) {
 
     const analyzeText = (text) => {
         console.log("\t\tTEXT:", text);
-        if (text.toLowerCase().endsWith("images")) {
+        if (text.toLowerCase().endsWith("images") || text.toLowerCase().endsWith("jpeg")) {
             return <><br/><img src={text} alt={text}/></>
         } else if (text.toLowerCase().includes("http")) {
             return <a href={text}>{text}</a>;
