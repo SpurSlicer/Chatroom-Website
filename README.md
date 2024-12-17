@@ -1,5 +1,8 @@
 # Project 2 Proposal
-We will be creating a clone of discord as it a prototypical example of a SPA. We both have a moderate interest in the technology behind chatroom applications and are curious about trying to recreate it from scratch. The intended audience will be anyone looking for like-minded communication clusters on the internet--i.e., the audience for forums. All of this will be styled differently from discord. Our inspiration from them was their chatroom structure.
+Team: Gregory Del Bene, Shane Wierl
+We will be creating a clone of discord as it a prototypical example of a SPA. We both have a moderate interest in the technology behind chatroom applications and are curious about trying to recreate it from scratch. The intended audience will be anyone looking for like-minded communication clusters on the internet--i.e., the audience for forums. All of this will be styled differently from discord. Our inspiration from them was their chatroom structure. We made a very basic wireframe , based on Discord, and is shown in Pictures below
+Minimum Viable Product - A chatroom app that can read and write data to Firebase, and store servers to messages. We also want to style it to look somewhat professional.
+Stretch Goals - Full UI set up, and Real Time Updates to the chatrooms. Be able to delete, create, rename servers.
 # Project 2 WIP Check In
 
 ### Forked Repository For Complete Refactor Process
@@ -28,6 +31,8 @@ ChatRoom Version 1
 ![Chat 1](public/Progress-Images/ChatV1.jpg)
 
 # Project 2 Reflection
+
+Overall we hit our goals, and created an app we are proud of. The backend functionality and structure took most of our time, but we got it to work. We had to do a full revamp of the app to meet React expectations and structures, so I had to make a new repository to essentially rewrite the project. This proved to be easier than we expected. I (shane) would've liked to have spent more time styling, maybe using an UI Kit for react / javascript. Overall we both had a fair contribution, as Greg worked mainly on the backend and base prototype, I set up our Firebase account , and I helped Greg rewrite his code to React structures. I also worked on styling, and restyling. We both got to learn Firebase, and strengthen our React skills, especially with State and Effect hooks. Firebase integeration was like using API's but more complex. It was hard to learn but once we figured it out it went smoothly to fetch data and write to the database. I would love to integrate a UI Kit and use / customize the elements and components. We both want to put some more time into this app and add the functions and UI that we wanted to finish from our stretch goals.
 
 # React + Vite
 
